@@ -7,8 +7,17 @@ Vue.use(VueAxios, axios)
   let sessionId = localStorage.getItem('session')
   data.append('sessionId', sessionId)
   return data
-}
-export const getData = ({state}, payload) => {
-  let url = `${state.api}/questions.json`
-  return axios.get(url).then(response => { return response.data })
 } */
+export const getQuestions = ({state}, payload) => {
+  let url = `data.json`
+  return axios(url).then(response => { return response })
+}
+export const setQuestion = ({state}, payload) => {
+  state.activeQuestion = payload
+}
+export const increase = ({state}, payload) => {
+  state.count = state.count + payload
+}
+export const setDisabled = ({state}, payload) => {
+  state.disabled.push(payload)
+}

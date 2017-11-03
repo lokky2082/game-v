@@ -10,7 +10,13 @@ Vue.use(Vuex, VueAxios, axios)
 
 const state = {
   count: 0,
-  history: []
+  history: [],
+  disabled: [],
+  activeQuestion: {
+    show: false,
+    question: {},
+    class: ''
+  }
 }
 
 const store = new Vuex.Store({
